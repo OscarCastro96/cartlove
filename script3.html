@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta Animada</title>
+  <title>Carta para ti</title>
   <style>
     body {
       margin: 0;
@@ -60,8 +60,8 @@
     }
 
     .card.open {
-      width: 400px;
-      height: 500px;
+      width: 500px;
+      height: 600px;
       opacity: 1;
     }
 
@@ -108,7 +108,7 @@
       display: none;
       position: absolute;
       bottom: -5px;
-      left: 125%;
+      left:145%;
       transform: translateX(-50%);
     }
 
@@ -118,6 +118,16 @@
       display: none;
       right: 120%;
     }
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -126,7 +136,7 @@
     <div class="heart">❤</div>
     <div class="card">
       <div class="message">
-        Mi carta para ti: <br><br>
+        Para el amor de mi vida: <br><br>
         "Hola amor <br> Todos los días desde el fin de semana despierto muy mal
         por lo que pasó, y solo pienso en ti, si estas comiendo por las tardes
         o si estas bien después de salir del trabajo. Se que estas muy enojada y triste por mi culpa,
@@ -142,7 +152,7 @@
   </div>
 
   <div class="buttons" id="buttons-container">
-    <div class="yes-message" id="yes-message">Sabía que dirías que si mi amor</div>
+    <div class="yes-message" id="yes-message">Sabía que dirías que si mi amor ❤</div>
     <button id="yes-button">Sí</button>
     <button id="no-button">No</button>
     <div class="try-again" id="try-again-message">Inténtalo de nuevo</div>
@@ -259,14 +269,23 @@
 
     yesButton.addEventListener('click', () => {
       yesMessage.style.display = 'block';
+      tryAgainMessage.style.display = 'none'; // Ocultar el mensaje "Inténtalo de nuevo"
+      noButton.style.display = 'none'; // Ocultar el botón "No"
       yesButton.style.transform = 'scale(1.2)';
       createCardParticles();  // Crear partículas alrededor de la carta
     });
 
+
     noButton.addEventListener('click', () => {
       tryAgainMessage.style.display = 'block';
-      yesButton.style.transform = `scale(${1 + yesButtonSize / 100})`; // Hacer crecer el botón cada vez que se presiona "No"
-      yesButtonSize += 4;  // Aumentar el tamaño de la escala para el siguiente clic
+      tryAgainMessage.style.animation = 'slideIn 0.5s ease-in-out'; // Añadir animación
+      yesButton.style.transform = `scale(${1 + yesButtonSize / 100})`; // Hacer crecer el botón "Sí"
+      yesButtonSize += 4; // Aumentar el tamaño del botón para el siguiente clic
+
+      // Reiniciar la animación para que se reproduzca cada vez
+      tryAgainMessage.addEventListener('animationend', () => {
+        tryAgainMessage.style.animation = '';
+      });
     });
   </script>
 </body>
