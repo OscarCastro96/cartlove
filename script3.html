@@ -89,16 +89,16 @@
     }
 
     .card.open {
-      width: 500px;
-      height: 600px;
+      width: 400px;
+      height: 520px;
       opacity: 1;
     }
 
     .message {
       color: #333;
-      font-size: 18px;
+      font-size: 14px;
       text-align: center;
-      padding: 20px;
+      padding: 18px;
     }
 
     .buttons {
@@ -156,6 +156,15 @@
         opacity: 1;
         transform: translateX(0);
       }
+    }
+    /* Centrar la carta en todas las pantallas */
+    #messageCard {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%; /* Asegura que se ajuste en pantallas pequeñas */
+      box-sizing: border-box; /* Evita desbordamientos por padding */
     }
   </style>
 </head>
