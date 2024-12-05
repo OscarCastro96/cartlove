@@ -3,51 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carta para ti</title>
+  <title>Carta Animada</title>
   <style>
-    @font-face {
-      font-family: 'CustomFont';
-      src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-regular-400.woff2') format('woff2');
-    }
-    /* Estilos generales para dispositivos móviles */
-    @media screen and (max-width: 768px) {
-      body {
-        font-size: 16px; /* Ajusta el tamaño del texto */
-        font-family: 'CustomFont', monospace;
-        padding: 10px; /* Reduce el espacio de los bordes */
-      }
-
-      #buttons-container {
-        flex-direction: column; /* Apilar botones verticalmente */
-        font-family: 'CustomFont', monospace;
-        align-items: center; /* Centrar botones */
-      }
-
-      #yesButton, #noButton {
-        width: 100%; /* Ocupan todo el ancho del contenedor */
-        font-family: 'CustomFont', monospace;
-        margin: 10px 0; /* Espaciado vertical */
-      }
-
-      #tryAgainMessage {
-        font-size: 14px; /* Reducir tamaño del mensaje */
-        font-family: 'CustomFont', monospace;
-        text-align: center; /* Centrar texto */
-      }
-    }
-
-    /* Estilos generales para pantallas muy pequeñas (por ejemplo, teléfonos compactos) */
-    @media screen and (max-width: 480px) {
-      #tryAgainMessage {
-        font-size: 12px; /* Reducir aún más el tamaño del mensaje */
-      }
-    }
     body {
       margin: 0;
-      font-family: 'CustomFont', monospace;
-      text-rendering: optimizeLegibility; /* Mejora la legibilidad */
-      -webkit-font-smoothing: antialiased; /* Suaviza la fuente en navegadores webkit */
-      -moz-osx-font-smoothing: grayscale; /* Suaviza la fuente en macOS */
+      font-family: 'Cursive', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -76,7 +36,6 @@
     .heart {
       color: #ff5e78;
       font-size: 50px;
-      font-family: 'Cursive', 'Courier New', Courier, monospace;
       transition: transform 1s ease-in-out;
     }
 
@@ -88,7 +47,6 @@
       position: absolute;
       width: 0;
       height: 0;
-      font-family: 'Cursive', 'Courier New', Courier, monospace;
       background: #fff;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       border-radius: 8px;
@@ -103,16 +61,15 @@
 
     .card.open {
       width: 400px;
-      height: 520px;
+      height: 400px;
       opacity: 1;
     }
 
     .message {
       color: #333;
-      font-size: 14px;
-      font-family: 'Cursive', 'Courier New', Courier, monospace;
+      font-size: 18px;
       text-align: center;
-      padding: 18px;
+      padding: 20px;
     }
 
     .buttons {
@@ -148,40 +105,18 @@
     .try-again {
       color: rgb(245, 47, 74);
       font-size: 20px;
-      font-family: 'Cursive', 'Courier New', Courier, monospace;
       display: none;
       position: absolute;
       bottom: -5px;
-      left:160%;
+      left: 140%;
       transform: translateX(-50%);
     }
 
     .yes-message {
       color: rgb(190, 114, 13);
-      font-size: 15px;
-      font-family: 'Cursive', 'Courier New', Courier, monospace;
+      font-size: 20px;
+      margin-bottom: 145px;
       display: none;
-      right: 120%;
-    }
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    /* Centrar la carta en todas las pantallas */
-    #messageCard {
-      position: absolute;
-      font-family: 'Cursive', 'Courier New', Courier, monospace;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      max-width: 90%; /* Asegura que se ajuste en pantallas pequeñas */
-      box-sizing: border-box; /* Evita desbordamientos por padding */
     }
   </style>
 </head>
@@ -191,23 +126,20 @@
     <div class="heart">❤</div>
     <div class="card">
       <div class="message">
-        Para el amor de mi vida: <br><br>
-        Hola amor <br> Todos los días desde el fin de semana despierto muy mal
+        Mi carta para ti: <br><br>
+        "Hola amor, todos los dias desde el fin de semana despierto muy mal
         por lo que pasó, y solo pienso en ti, si estas comiendo por las tardes
-        o si estas bien después de salir del trabajo. Se que estas muy enojada y triste por mi culpa,
-        y la verdad es que tienes razón, no debió estar eso en mi celular. Pero no tengo nada con nadie
-        Soy solo tuyo y de nadie mas. Al igual que mi corazón.
-        Quiero tanto una vida contigo, como para cometer una estupidez. No lo haría. <br><br> 
-        Construimos ladrillo a ladrillo lo nuestro, y es increible todo lo que hicimos.<br>
-        Hice esto para ti, porque no quiero que esta historia termine.
-        Por eso quiero preguntarte<br><br>Si continuamos nuestra historia?<br><br>
-        Si dices que Si, estaré esperandote cada día en la plazita cerca del parque de niños atras del SuperMall, después del trabajo en la tarde noche.
+        o si estas bien despues de salir del trabajo. Se que estas muy enojada y triste por mi culpa,
+        y la verdad es que tienes razon, no debio estar eso en mi celular. Pero no tengo nada con nadie
+        Soy solo tuyo y de nadie mas. Al igual que mi corazon.
+        Quiero tanto una vida contigo, como para cometer una estupidez. No lo haria. <br><br> 
+        Por eso te pregunto, quieres volver conmigo?
       </div>
     </div>
   </div>
 
   <div class="buttons" id="buttons-container">
-    <div class="yes-message" id="yes-message">Sabía que dirías que si mi amor ❤</div>
+    <div class="yes-message" id="yes-message">Sabía que dirías que <br> si mi amor</div>
     <button id="yes-button">Sí</button>
     <button id="no-button">No</button>
     <div class="try-again" id="try-again-message">Inténtalo de nuevo</div>
@@ -226,8 +158,7 @@
       canvas.height = window.innerHeight;
     });
 
-    // Partículas iniciales (rosas)
-    function createInitialParticles() {
+    function createHeartParticles() {
       const colors = ["#ff5e78", "#ffa7b3", "#ff758c"];
       for (let i = 0; i < 150; i++) {
         particles.push({
@@ -241,51 +172,7 @@
       }
     }
 
-    // Partículas de colores pastel que salen desde los bordes de la carta
-    function createCardParticles() {
-      const colors = ["#ff5e78", "#ffa7b3", "#ff758c", "#f9e4a3", "#9a7eff"]; // Colores pastel (incluyendo amarillo y violeta)
-      const card = document.querySelector('.card');
-      const cardRect = card.getBoundingClientRect(); // Obtiene las coordenadas de la carta
-
-      for (let i = 0; i < 100; i++) {
-        // Partículas originadas desde los bordes de la carta
-        const side = Math.floor(Math.random() * 4);
-        let x, y, speedX, speedY;
-
-        if (side === 0) {
-          x = cardRect.left + Math.random() * cardRect.width; // borde superior
-          y = cardRect.top;
-          speedY = Math.random() * 2 - 1;
-          speedX = Math.random() * 2 - 1;
-        } else if (side === 1) {
-          x = cardRect.left + cardRect.width; // borde derecho
-          y = cardRect.top + Math.random() * cardRect.height;
-          speedX = Math.random() * 2 - 1;
-          speedY = Math.random() * 2 - 1;
-        } else if (side === 2) {
-          x = cardRect.left + Math.random() * cardRect.width; // borde inferior
-          y = cardRect.top + cardRect.height;
-          speedY = Math.random() * 2 - 1;
-          speedX = Math.random() * 2 - 1;
-        } else {
-          x = cardRect.left; // borde izquierdo
-          y = cardRect.top + Math.random() * cardRect.height;
-          speedX = Math.random() * 2 - 1;
-          speedY = Math.random() * 2 - 1;
-        }
-
-        particles.push({
-          x: x,
-          y: y,
-          size: Math.random() * 3 + 2,
-          color: colors[Math.floor(Math.random() * colors.length)],
-          speedX: speedX,
-          speedY: speedY,
-        });
-      }
-    }
-
-    function drawParticles() {
+    function drawHeartParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((particle) => {
         ctx.beginPath();
@@ -299,11 +186,11 @@
         if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
       });
-      requestAnimationFrame(drawParticles);
+      requestAnimationFrame(drawHeartParticles);
     }
 
-    createInitialParticles();  // Partículas iniciales
-    drawParticles();  // Dibujar partículas iniciales
+    createHeartParticles();
+    drawHeartParticles();
 
     const heart = document.querySelector('.heart');
     const card = document.querySelector('.card');
@@ -318,29 +205,18 @@
     heart.addEventListener('click', () => {
       card.classList.add('open');
       setTimeout(() => {
-        buttonsContainer.style.display = "flex";
-      }, 2000);  // Hacer visibles los botones después de 2 segundos
+        buttonsContainer.style.display = 'flex';
+      }, 2000);
+    });
+
+    noButton.addEventListener('click', () => {
+      tryAgainMessage.style.display = 'block';
+      yesButtonSize += 2;
+      yesButton.style.transform = `scale(${yesButtonSize / 16})`;
     });
 
     yesButton.addEventListener('click', () => {
       yesMessage.style.display = 'block';
-      tryAgainMessage.style.display = 'none'; // Ocultar el mensaje "Inténtalo de nuevo"
-      noButton.style.display = 'none'; // Ocultar el botón "No"
-      yesButton.style.transform = 'scale(1.2)';
-      createCardParticles();  // Crear partículas alrededor de la carta
-    });
-
-
-    noButton.addEventListener('click', () => {
-      tryAgainMessage.style.display = 'block';
-      tryAgainMessage.style.animation = 'slideIn 0.5s ease-in-out'; // Añadir animación
-      yesButton.style.transform = `scale(${1 + yesButtonSize / 100})`; // Hacer crecer el botón "Sí"
-      yesButtonSize += 4; // Aumentar el tamaño del botón para el siguiente clic
-
-      // Reiniciar la animación para que se reproduzca cada vez
-      tryAgainMessage.addEventListener('animationend', () => {
-        tryAgainMessage.style.animation = '';
-      });
     });
   </script>
 </body>
