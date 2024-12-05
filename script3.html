@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carta para ti</title>
   <style>
+    /* Estilos generales para dispositivos móviles */
+    @media screen and (max-width: 768px) {
+      body {
+        font-size: 16px; /* Ajusta el tamaño del texto */
+        padding: 10px; /* Reduce el espacio de los bordes */
+      }
+
+      #buttons-container {
+        flex-direction: column; /* Apilar botones verticalmente */
+        align-items: center; /* Centrar botones */
+      }
+
+      #yesButton, #noButton {
+        width: 100%; /* Ocupan todo el ancho del contenedor */
+        margin: 10px 0; /* Espaciado vertical */
+      }
+
+      #tryAgainMessage {
+        font-size: 14px; /* Reducir tamaño del mensaje */
+        text-align: center; /* Centrar texto */
+      }
+    }
+
+    /* Estilos generales para pantallas muy pequeñas (por ejemplo, teléfonos compactos) */
+    @media screen and (max-width: 480px) {
+      #tryAgainMessage {
+        font-size: 12px; /* Reducir aún más el tamaño del mensaje */
+      }
+    }
     body {
       margin: 0;
       font-family: 'Cursive', 'Courier New', Courier, monospace;
@@ -137,15 +166,15 @@
     <div class="card">
       <div class="message">
         Para el amor de mi vida: <br><br>
-        Hola amor. <br> Todos los días desde el fin de semana despierto muy mal
+        "Hola amor <br> Todos los días desde el fin de semana despierto muy mal
         por lo que pasó, y solo pienso en ti, si estas comiendo por las tardes
-        o si llegas bien a casa después de salir del trabajo. Se que estas muy enojada y triste por mi culpa,
-        y la verdad es que tienes razón, no debió estar eso en mi celular. Pero no tengo nada con nadie,
-        mis ojos solo te ven a ti y soy solo tuyo, de nadie mas. Al igual que mi corazón.
-        Quiero toda una vida contigo, como para cometer una estupidez. No lo haría. <br><br> 
+        o si estas bien después de salir del trabajo. Se que estas muy enojada y triste por mi culpa,
+        y la verdad es que tienes razón, no debió estar eso en mi celular. Pero no tengo nada con nadie
+        Soy solo tuyo y de nadie mas. Al igual que mi corazón.
+        Quiero tanto una vida contigo, como para cometer una estupidez. No lo haría. <br><br> 
         Construimos ladrillo a ladrillo lo nuestro, y es increible todo lo que hicimos.<br>
         Hice esto para ti, porque no quiero que esta historia termine.
-        Y por eso quiero preguntarte<br><br>Si continuamos nuestra historia?<br><br>
+        Por eso quiero preguntarte<br><br>Continuamos nuestra historia?<br><br>
         Si dices que Si, estaré esperandote cada día en la plazita cerca del parque de niños atras del SuperMall, después del trabajo en la tarde noche.
       </div>
     </div>
